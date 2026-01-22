@@ -16,33 +16,33 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Alex Chen - Software Engineer",
-    template: "%s | Alex Chen",
+    default: "Zaidane El Haouari - Software Engineer",
+    template: "%s | Zaidane El Haouari",
   },
   description:
-    "Software engineer focused on building performant, accessible, and maintainable applications. Specializing in full-stack development, distributed systems, and developer tooling.",
+    "Software Engineering New Grad with professional CO-OP experience in DevOps, backend development, automation, and web systems.",
   keywords: [
     "software engineer",
     "full-stack developer",
-    "TypeScript",
-    "Go",
+    "DevOps",
+    "Python",
     "React",
-    "Next.js",
+    "C#",
   ],
-  authors: [{ name: "Alex Chen" }],
+  authors: [{ name: "Zaidane El Haouari" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Alex Chen",
-    title: "Alex Chen - Software Engineer",
+    siteName: "Zaidane El Haouari",
+    title: "Zaidane El Haouari - Software Engineer",
     description:
-      "Software engineer focused on building performant, accessible, and maintainable applications.",
+      "Software Engineering New Grad with professional CO-OP experience in DevOps, backend development, automation, and web systems.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Chen - Software Engineer",
+    title: "Zaidane El Haouari - Software Engineer",
     description:
-      "Software engineer focused on building performant, accessible, and maintainable applications.",
+      "Software Engineering New Grad with professional CO-OP experience in DevOps, backend development, automation, and web systems.",
   },
   robots: {
     index: true,
