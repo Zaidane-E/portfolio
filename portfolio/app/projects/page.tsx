@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <Container>
         <SectionHeader
           title="Projects"
-          description="A collection of work spanning distributed systems, developer tools, and web applications."
+          description="A collection of work spanning desktop apps, tools, and web applications."
         />
         <div className="space-y-6">
           {sortedProjects.map((project) => (

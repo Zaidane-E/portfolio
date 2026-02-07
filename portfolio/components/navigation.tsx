@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
 ];
 
 export function Navigation() {
@@ -19,7 +19,7 @@ export function Navigation() {
           href="/"
           className="text-sm font-semibold text-zinc-900 dark:text-zinc-100"
         >
-          AC
+          ZE
         </Link>
         <ul className="flex items-center gap-1">
           {navItems.map((item) => {

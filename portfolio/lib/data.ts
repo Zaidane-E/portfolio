@@ -5,7 +5,7 @@ export const personalInfo: PersonalInfo = {
   title: "Software Engineer",
   location: "Ottawa, ON, Canada",
   email: "elhaouarizaidane@gmail.com",
-  bio: "Software Engineering New Grad with professional CO-OP experience in DevOps, backend development, automation, and web systems. Reliable, transparent, and detail-oriented, I bring a maker's mindset fueled by diverse interests in language learning, custom hardware, and creative problem-solving.",
+  bio: "Software Engineer Graduate with experience across full-stack development, backend systems, DevOps, and automation. Proven ability to design, build, test, and deploy software using modern frameworks, cloud, and CI/CD pipelines. Strong foundation in RESTful APIs, scalable architectures, and Agile environments.",
   resumeUrl: "https://docs.google.com/document/d/1jptXmIVcfRCmKWfOXgiofdkhyq76BbbeqLQx0iYp3aw/preview",
   socials: [
     {
@@ -26,167 +26,177 @@ export const projects: Project[] = [
     slug: "club-races",
     title: "Club Races - University Capstone",
     description:
-      "A full-stack web application enabling cycling club owners to create and manage race events using real-time data from cyclists via Strava API integration.",
-    longDescription: `Collaborated with peers to design and implement a full-stack web application for cycling club event management. The platform enables club owners to create and manage race events while tracking athlete performance in real-time.
+      "A full-stack web application for managing cycling race events with Strava API integration for athlete performance tracking.",
+    longDescription: `Designed and implemented a full-stack web application for managing cycling race events. The platform enables club owners to create and manage events while tracking athlete performance.
 
-Integrated the Strava API to retrieve athlete performance metrics, GPS data, and activity statistics. This integration enhanced event analytics and enabled comprehensive participant monitoring throughout race events.
+Integrated the Strava API to collect athlete performance metrics and GPS data. Built analytics and visualization features for event tracking and performance monitoring.
 
-The frontend was built with React for a responsive user experience, while the backend utilized Spring Boot with Maven for robust API development. MySQL was used for persistent data storage, ensuring reliable and scalable operations.`,
+Implemented persistent storage and backend services using Spring Boot and MySQL, with a React frontend for responsive user experience.`,
     technologies: ["React", "Java", "Maven", "MySQL", "Spring Boot", "Strava API"],
     role: "Full-Stack Developer",
     duration: "8 months",
     year: 2024,
     highlights: [
-      "Integrated Strava API for real-time athlete performance tracking",
-      "Built event management features with React frontend",
-      "Implemented GPS data retrieval and visualization",
-      "Designed scalable database schema with MySQL",
+      "Integrated Strava API for athlete performance metrics and GPS data",
+      "Built analytics and visualization features for event tracking",
+      "Implemented persistent storage with Spring Boot and MySQL",
+      "Designed responsive React frontend",
     ],
+    links: {
+      github: "https://github.com/Zaidane-E/Chara",
+    },
     featured: true,
   },
   {
-    slug: "task-manager",
-    title: "Task Manager",
+    slug: "chara",
+    title: "Chara - Task & Habit Tracking App",
     description:
-      "A simple yet robust task management application demonstrating end-to-end API and frontend integration with comprehensive testing.",
-    longDescription: `Built a task management application for tracking task priorities, due dates, and completion status. The project demonstrates clean architecture and best practices for full-stack development.
+      "A task and habit management system with prioritization, streak tracking, analytics, and Google Sheets integration.",
+    longDescription: `Developed a task and habit management system with prioritization, streak tracking, and analytics. The application helps users build consistent habits and manage tasks effectively.
 
-The backend is built with C# and .NET 8, using Entity Framework Core for database operations with SQLite. REST endpoints are fully documented with Swagger for easy API exploration and testing.
+Implemented JWT-based authentication and role-aware data access for secure user management. Integrated Google Sheets API for external reporting and data visualization.
 
-Implemented comprehensive testing with xUnit to ensure robust backend functionality. The Angular frontend provides a clean interface for task management with real-time updates.`,
-    technologies: ["C#", ".NET 8", "SQLite", "Angular", "xUnit", "EF Core", "Swagger"],
+Built RESTful APIs documented with Swagger/OpenAPI and thoroughly tested using xUnit. The Angular frontend provides a clean interface for task and habit management.`,
+    technologies: ["C#", "ASP.NET Core", "PostgreSQL", "Angular", "xUnit", "Azure", "Swagger"],
     role: "Solo Developer",
-    duration: "2 months",
-    year: 2024,
+    duration: "1 month",
+    year: 2026,
     highlights: [
-      "End-to-end API and frontend integration",
-      "EF Core migrations for database management",
-      "Swagger-documented REST endpoints",
+      "JWT-based authentication and role-aware data access",
+      "Google Sheets API integration for reporting",
+      "RESTful APIs documented with Swagger/OpenAPI",
       "Comprehensive xUnit test coverage",
     ],
     links: {
-      github: "https://github.com/zaidane-e",
+      github: "https://github.com/Zaidane-E/Chara",
     },
     featured: true,
   },
   {
-    slug: "minesweeper-bot",
-    title: "Minesweeper Bot",
+    slug: "sdv",
+    title: "SDV - Data Visualization Tool",
     description:
-      "An automated Minesweeper solver using Python with a benchmarking framework to evaluate algorithm performance across hundreds of games.",
-    longDescription: `Developed an automated Minesweeper solver that efficiently clears randomly generated games using logical deduction and probability-based decision making.
+      "A client-side data visualization application for analyzing workout data with interactive charts and layered architecture.",
+    longDescription: `Built a client-side data visualization application for analyzing workout data. Designed a layered architecture separating data ingestion, domain modeling, analytics, and UI.
 
-Built a comprehensive benchmarking framework to simulate hundreds of games, tracking win rates and decision accuracy. This allowed for systematic evaluation and improvement of the solving algorithm's performance.
+Implemented interactive charts for volume, strength progression, and consistency metrics. The application emphasizes performance, security, and data ownership by processing all data client-side.
 
-The project demonstrates algorithmic problem-solving, probability theory application, and performance optimization techniques.`,
-    technologies: ["Python"],
+Deployed as a static application on Vercel, ensuring fast load times and minimal infrastructure overhead.`,
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     role: "Solo Developer",
-    duration: "1 month",
-    year: 2023,
+    duration: "1 months",
+    year: 2026,
     highlights: [
-      "Automated solving of randomly generated Minesweeper games",
-      "Benchmarking framework for algorithm evaluation",
-      "Win rate and decision accuracy tracking",
-      "Optimized algorithm performance through iterative testing",
+      "Layered architecture separating concerns",
+      "Interactive charts for volume, strength, and consistency",
+      "Client-side data processing for privacy",
+      "Static deployment for performance",
+    ],
+    links: {
+      github: "https://github.com/Zaidane-E/Strong-Data-Visualizer",
+    },
+    featured: true,
+  },
+  {
+    slug: "pdf-ai",
+    title: "PDF AI - Desktop RAG App",
+    description:
+      "A privacy-first desktop PDF chat assistant using RAG with local vector storage and user-supplied OpenAI API key.",
+    longDescription: `Built a privacy-first desktop PDF chat assistant using Tauri, React, TypeScript, Tailwind CSS, and Python. The application supports local-only operation with user-supplied OpenAI API key.
+
+Developed PDF ingestion, embedding generation, vector indexing, and context-aware Q&A with source citations and page-level references. Implemented local vector storage with LanceDB for semantic retrieval of document embeddings.
+
+Created the frontend with React, TypeScript, Tailwind CSS, and Zustand for state management. Desktop packaging handled via Tauri for cross-platform support.`,
+    technologies: ["Tauri", "React", "TypeScript", "Tailwind CSS", "Python", "LanceDB"],
+    role: "Solo Developer",
+    duration: "In progress",
+    year: 2025,
+    highlights: [
+      "Privacy-first with local-only processing",
+      "PDF ingestion with embedding generation and vector indexing",
+      "Context-aware Q&A with source citations",
+      "Cross-platform desktop app via Tauri",
     ],
     links: {
       github: "https://github.com/zaidane-e",
     },
     featured: true,
-  },
-  {
-    slug: "documentation-tool",
-    title: "Documentation Tool",
-    description:
-      "A tool to generate stylized, searchable documentation from Confluence exports, improving accessibility for teams and clients.",
-    longDescription: `Developed a documentation generation tool that transforms Confluence exports into stylized, searchable documentation. The tool significantly improves accessibility for both internal teams and external clients.
-
-Automated indexing and search functionality reduces manual documentation effort while enhancing usability. The generated documentation features a clean, professional design with fast search capabilities.
-
-Built with Java for the core processing logic, with CSS and HTML5 for the frontend presentation. Bash scripts automate the build and deployment process.`,
-    technologies: ["Java", "CSS", "HTML5", "Bash"],
-    role: "Solo Developer",
-    duration: "2 months",
-    year: 2023,
-    highlights: [
-      "Transforms Confluence exports into searchable documentation",
-      "Automated indexing and search functionality",
-      "Improved documentation accessibility for teams and clients",
-      "Reduced manual documentation effort",
-    ],
-    featured: false,
   },
 ];
 
 export const experience: Experience[] = [
+  {
+    company: "Freelance",
+    role: "Software Developer",
+    location: "Ottawa, ON",
+    period: "July 2025 - Present",
+    description:
+      "Designing and developing full-stack applications and privacy-focused tools for client-specific business workflows.",
+    achievements: [
+      "Designed and developed full-stack applications using C#, ASP.NET Core, Angular, TypeScript, and PostgreSQL",
+      "Built privacy-focused desktop and web applications using Tauri, React, Tailwind CSS, and Python",
+      "Integrated OpenAI APIs and retrieval-augmented generation (RAG) systems",
+      "Delivered end-to-end solutions including requirements analysis, UI/UX implementation, backend development, automated testing, and cloud deployment on Azure, Vercel, and Neon",
+    ],
+    technologies: ["C#", "ASP.NET Core", "Angular", "TypeScript", "PostgreSQL", "Tauri", "React", "Python", "Azure", "Vercel"],
+  },
   {
     company: "AB Protection",
     role: "Software Developer (CO-OP)",
     location: "Casablanca, Morocco",
     period: "January 2025 - April 2025",
     description:
-      "Worked on RESTful APIs, prototype features, and CI/CD pipelines for an Agile software development team.",
+      "Worked on RESTful APIs, frontend and backend features, and CI/CD pipelines for an Agile software development team.",
     achievements: [
-      "Tested and debugged RESTful APIs using Python and JavaScript, improving system reliability",
-      "Implemented and enhanced prototype features with React, Angular, and RxJS",
-      "Integrated PostgreSQL databases ensuring smooth functionality",
-      "Collaborated on Agile workflows using Git, Bitbucket, and Jira",
-      "Implemented CI/CD pipelines with GitHub Actions, deploying applications on Vercel",
+      "Tested, debugged, and validated RESTful APIs using Python and JavaScript, increasing reliability and data integrity",
+      "Implemented frontend and backend features using React, Angular, RxJS, and PostgreSQL",
+      "Participated in Agile development cycles using Jira and Git-based workflows",
+      "Implemented CI/CD pipelines with GitHub Actions and deployed applications to Vercel",
     ],
     technologies: ["Python", "JavaScript", "React", "Angular", "RxJS", "PostgreSQL", "GitHub Actions", "Vercel"],
   },
   {
     company: "Ribbon Communications",
-    role: "Software Developer DevOps (CO-OP)",
+    role: "Software Developer - DevOps (CO-OP)",
     location: "Ottawa, ON",
-    period: "May 2022 - August 2022",
+    period: "September 2021 - August 2022",
     description:
-      "Focused on cloud infrastructure visualization, automation, and Linux server administration.",
+      "Developed automation tools, internal documentation systems, and enhanced infrastructure observability.",
     achievements: [
-      "Visualized cloud infrastructure data using Grafana, ElasticSearch, and Kibana",
-      "Developed Ansible playbooks to automate operational tasks on OpenStack",
-      "Diagnosed and resolved server issues across multiple Linux distributions (Ubuntu, CentOS, Debian, Solus, RHEL, Fedora)",
-      "Improved system observability and troubleshooting efficiency",
+      "Developed automation scripts and internal tools using Python, Java, Bash, and Linux",
+      "Built a searchable, automated documentation generator integrated with Confluence",
+      "Improved system observability through monitoring and logging using Grafana, ElasticSearch, Kibana, Telegraf, and InfluxDB",
+      "Automated infrastructure and testing workflows using Docker, Jenkins, Ansible, and Cron",
+      "Supported and managed OpenStack-based infrastructure across multiple Linux distributions",
     ],
-    technologies: ["Grafana", "ElasticSearch", "Kibana", "Ansible", "OpenStack", "Linux"],
-  },
-  {
-    company: "Ribbon Communications",
-    role: "Software Developer DevOps (CO-OP)",
-    location: "Ottawa, ON",
-    period: "September 2021 - December 2021",
-    description:
-      "Built automation tools and enhanced server observability for DevOps workflows.",
-    achievements: [
-      "Built automation tools in Python, Java, and Bash to streamline workflows",
-      "Automated Bitbucket repository updates, VM creation, and testing processes",
-      "Enhanced server observability with Grafana, Telegraf, and InfluxDB",
-      "Automated testing pipelines with Jenkins Pipelines, Docker, and Cron jobs",
-    ],
-    technologies: ["Python", "Java", "Bash", "Grafana", "Telegraf", "InfluxDB", "Jenkins", "Docker"],
+    technologies: ["Python", "Java", "Bash", "Linux", "Grafana", "ElasticSearch", "Kibana", "Docker", "Jenkins", "Ansible", "OpenStack"],
   },
 ];
 
 export const skills: Skill[] = [
   {
     category: "Programming Languages",
-    items: ["C#", "Python", "Java", "JavaScript", "HTML/CSS", "C++"],
+    items: ["C#", "Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS"],
   },
   {
     category: "Frameworks & Libraries",
-    items: [".NET", "React", "Angular", "Spring", "RxJS", "jQuery"],
+    items: ["ASP.NET Core", "React", "Angular", "Next.js", "Spring Boot", "Tailwind CSS"],
+  },
+  {
+    category: "Backend & APIs",
+    items: ["RESTful APIs", "JWT Authentication", "OpenAPI/Swagger"],
   },
   {
     category: "Databases & Environments",
-    items: ["PostgreSQL", "SQL", "MySQL", "SQLite", "Linux", "REST APIs"],
+    items: ["PostgreSQL", "Azure", "Vercel", "Linux", "Artifactory"],
   },
   {
     category: "DevOps & Automation",
-    items: ["Docker", "Ansible", "Jenkins", "GitHub Actions", "OpenStack", "Grafana", "InfluxDB"],
+    items: ["Docker", "Ansible", "Jenkins", "CI/CD", "OpenStack", "Grafana", "InfluxDB"],
   },
   {
-    category: "Tools",
-    items: ["Git", "Bitbucket", "Jira", "Confluence", "Kibana", "Artifactory"],
+    category: "Tools & Methodologies",
+    items: ["Git", "Bitbucket", "Jira", "Confluence", "Scrum", "xUnit"],
   },
 ];
 

@@ -3,39 +3,21 @@ import { personalInfo, skills, experience } from "@/lib/data";
 import { Container, Section, SectionHeader, LinkButton } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: `Learn more about ${personalInfo.name}, a software engineer focused on building performant and accessible applications.`,
+  title: "Experience",
+  description: `Professional experience and technical skills of ${personalInfo.name}, a software engineer focused on building performant and accessible applications.`,
 };
 
-export default function AboutPage() {
+export default function ExperiencePage() {
   return (
     <Section className="pt-20">
       <Container>
         <header className="mb-16">
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
-            About
+            Experience
           </h1>
           <div className="mt-6 space-y-4 text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m {personalInfo.name}, a {personalInfo.title.toLowerCase()} based in{" "}
-              {personalInfo.location}. I build software that solves real
-              problems, with a focus on performance, accessibility, and
-              maintainability.
-            </p>
-            <p>
-              My work spans the full stack, from designing distributed systems
-              that handle millions of operations to crafting intuitive user
-              interfaces. I believe in writing code that&apos;s not just functional,
-              but readable and testable.
-            </p>
-            <p>
-              Currently, I&apos;m particularly interested in developer tooling and
-              infrastructure. I enjoy building tools that make other engineers
-              more productive and systems that scale gracefully under pressure.
-            </p>
-            <p>
-              When I&apos;m not coding, you&apos;ll find me reading about systems design,
-              contributing to open source, or exploring the outdoors.
+              My professional journey in software engineering, from DevOps and automation to full-stack development.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
@@ -44,7 +26,7 @@ export default function AboutPage() {
             </LinkButton>
             {personalInfo.resumeUrl && (
               <LinkButton href={personalInfo.resumeUrl} variant="secondary" external>
-                Download Resume
+                View Resume
               </LinkButton>
             )}
           </div>
@@ -53,8 +35,8 @@ export default function AboutPage() {
         <div className="space-y-16">
           <section>
             <SectionHeader
-              title="Experience"
-              description="My professional journey in software engineering."
+              title="Work Experience"
+              description="Professional roles and contributions."
             />
             <div className="space-y-10">
               {experience.map((job, index) => (
@@ -73,6 +55,26 @@ export default function AboutPage() {
                   <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
                     {job.description}
                   </p>
+                  <ul className="mt-3 space-y-1">
+                    {job.achievements.map((achievement, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-zinc-600 dark:text-zinc-400 before:mr-2 before:content-['•']"
+                      >
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {job.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </article>
               ))}
             </div>
