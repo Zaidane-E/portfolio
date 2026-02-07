@@ -43,7 +43,7 @@ Implemented persistent storage and backend services using Spring Boot and MySQL,
       "Designed responsive React frontend",
     ],
     links: {
-      github: "https://github.com/Zaidane-E/Chara",
+      github: "https://github.com/zaidane-e",
     },
     featured: true,
   },
