@@ -1,11 +1,11 @@
-import { Project, Experience, Skill, PersonalInfo } from "./types";
+import { Project, Experience, Skill, PersonalInfo, Language, Education } from "./types";
 
 export const personalInfo: PersonalInfo = {
   name: "Zaidane El Haouari",
   title: "Software Engineer",
   location: "Ottawa, ON, Canada",
   email: "elhaouarizaidane@gmail.com",
-  bio: "Software Engineer Graduate with experience across full-stack development, backend systems, DevOps, and automation. Proven ability to design, build, test, and deploy software using modern frameworks, cloud, and CI/CD pipelines. Strong foundation in RESTful APIs, scalable architectures, and Agile environments.",
+  bio: "Software Engineer with hands-on experience designing, testing, and deploying RESTful APIs and full-stack applications using React, Angular, ASP.NET Core, and Spring Boot. Background in DevOps and infrastructure automation, including CI/CD pipelines, Docker, and monitoring across 50+ servers; adds a systems-level perspective to application development.",
   resumeUrl: "https://docs.google.com/document/d/1422r6OEzQqNt1IZyjk6uE1Ka18UenBrZ/preview",
   socials: [
     {
@@ -202,6 +202,44 @@ export const skills: Skill[] = [
   {
     category: "Tools & Methodologies",
     items: ["Git", "Bitbucket", "Jira", "Confluence", "Scrum"],
+  },
+];
+
+export const languages: Language[] = [
+  {
+    language: "English",
+    proficiency: "Fluent (IELTS 8.0)",
+  },
+  {
+    language: "French",
+    proficiency: "Native/Bilingual",
+  },
+  {
+    language: "Arabic",
+    proficiency: "Native/Bilingual",
+  },
+  {
+    language: "Japanese",
+    proficiency: "Advanced (JLPT N2)",
+  },
+  {
+    language: "Spanish",
+    proficiency: "Elementary (A2)",
+  },
+];
+
+export const education: Education[] = [
+  {
+    institution: "University of Ottawa",
+    degree: "Bachelor of Applied Science, Software Engineering (Co-op Program)",
+    location: "Ottawa, ON",
+    period: "2019 – 2025",
+    coursework: [
+      "Software Architecture and Design",
+      "Requirements Engineering",
+      "Real-Time and Embedded Software Design",
+      "Software Engineering Project Management",
+    ],
   },
 ];
 

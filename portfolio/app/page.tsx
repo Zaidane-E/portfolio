@@ -3,6 +3,8 @@ import {
   FeaturedProjects,
   Experience,
   Skills,
+  Education,
+  Languages,
 } from "@/components/sections";
 
 export default function Home() {
@@ -12,6 +14,8 @@ export default function Home() {
       <Experience />
       <FeaturedProjects />
       <Skills />
+      <Languages />
+      <Education />
     </>
   );
 }

@@ -47,3 +47,16 @@ export interface PersonalInfo {
   resumeUrl?: string;
   socials: SocialLink[];
 }
+
+export interface Language {
+  language: string;
+  proficiency: string;
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  location: string;
+  period: string;
+  coursework?: string[];
+}
