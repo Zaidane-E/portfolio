@@ -1,23 +1,20 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { projects } from "@/lib/data";
-import { Container, Section, SectionHeader, BadgeList } from "@/components/ui";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "A collection of projects showcasing my work in software engineering, from distributed systems to developer tools.",
-};
+import Link from "next/link";
+import { Container, Section, SectionHeader, BadgeList } from "@/components/ui";
+import { useTranslations, useTranslatedProjects } from "@/lib/i18n/useTranslatedData";
 
 export default function ProjectsPage() {
+  const t = useTranslations();
+  const projects = useTranslatedProjects();
   const sortedProjects = [...projects].sort((a, b) => b.year - a.year);
 
   return (
     <Section className="pt-20">
       <Container>
         <SectionHeader
-          title="Projects"
-          description="A collection of work spanning desktop apps, tools, and web applications."
+          title={t.pages.projects.title}
+          description={t.pages.projects.description}
         />
         <div className="space-y-6">
           {sortedProjects.map((project) => (
@@ -37,7 +34,7 @@ export default function ProjectsPage() {
                       </span>
                       {project.featured && (
                         <span className="rounded-md bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white dark:bg-zinc-100 dark:text-zinc-900">
-                          Featured
+                          {t.nav.home === "Home" ? "Featured" : "En vedette"}
                         </span>
                       )}
                     </div>
@@ -55,7 +52,7 @@ export default function ProjectsPage() {
                     className="text-sm text-zinc-400 transition-colors group-hover:text-zinc-600 dark:text-zinc-500 dark:group-hover:text-zinc-300"
                     aria-hidden="true"
                   >
-                    View
+                    {t.nav.home === "Home" ? "View" : "Voir"}
                   </span>
                 </div>
               </Link>

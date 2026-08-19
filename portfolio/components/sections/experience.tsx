@@ -1,13 +1,18 @@
-import { experience } from "@/lib/data";
+"use client";
+
 import { Container, Section, SectionHeader } from "@/components/ui";
+import { useTranslations, useTranslatedExperience } from "@/lib/i18n";
 
 export function Experience() {
+  const t = useTranslations();
+  const experience = useTranslatedExperience();
+
   return (
     <Section className="border-t border-zinc-100 dark:border-zinc-800">
       <Container>
         <SectionHeader
-          title="Experience"
-          description="My professional journey building software at scale."
+          title={t.sections.workExperience}
+          description={t.sections.workExperienceDesc}
         />
         <div className="space-y-12">
           {experience.map((job, index) => (

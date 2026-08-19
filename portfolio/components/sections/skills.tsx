@@ -1,13 +1,18 @@
-import { skills } from "@/lib/data";
+"use client";
+
 import { Container, Section, SectionHeader } from "@/components/ui";
+import { useTranslations, useTranslatedSkills } from "@/lib/i18n";
 
 export function Skills() {
+  const t = useTranslations();
+  const skills = useTranslatedSkills();
+
   return (
     <Section className="border-t border-zinc-100 dark:border-zinc-800">
       <Container>
         <SectionHeader
-          title="Skills"
-          description="Technologies and practices I work with regularly."
+          title={t.sections.technicalSkills}
+          description={t.sections.technicalSkillsDesc}
         />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill) => (

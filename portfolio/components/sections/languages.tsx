@@ -1,13 +1,17 @@
+"use client";
+
 import { languages } from "@/lib/data";
 import { Container, Section, SectionHeader } from "@/components/ui";
+import { useTranslations } from "@/lib/i18n";
 
 export function Languages() {
+  const t = useTranslations();
   return (
     <Section>
       <Container>
         <SectionHeader
-          title="Languages"
-          description="Spoken languages and proficiency levels."
+          title={t.sections.languages}
+          description={t.sections.languagesDesc}
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {languages.map((lang, index) => (

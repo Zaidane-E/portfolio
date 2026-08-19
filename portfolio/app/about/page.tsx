@@ -1,19 +1,24 @@
-import { Metadata } from "next";
-import { personalInfo, education, languages } from "@/lib/data";
-import { Container, Section, SectionHeader, LinkButton } from "@/components/ui";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: `Learn more about ${personalInfo.name}, including education, languages, and background.`,
-};
+import { Container, Section, SectionHeader, LinkButton } from "@/components/ui";
+import {
+  useTranslations,
+  useTranslatedPersonalInfo,
+  useTranslatedEducation,
+  useTranslatedLanguages
+} from "@/lib/i18n/useTranslatedData";
 
 export default function AboutPage() {
+  const t = useTranslations();
+  const personalInfo = useTranslatedPersonalInfo();
+  const education = useTranslatedEducation();
+  const languages = useTranslatedLanguages();
   return (
     <Section className="pt-20">
       <Container>
         <header className="mb-16">
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
-            About
+            {t.pages.about.title}
           </h1>
           <div className="mt-6 space-y-4 text-zinc-600 dark:text-zinc-400">
             <p>
@@ -22,21 +27,19 @@ export default function AboutPage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <LinkButton href={`mailto:${personalInfo.email}`}>
-              Get in Touch
+              {t.sections.getInTouch}
             </LinkButton>
-            {personalInfo.resumeUrl && (
-              <LinkButton href={personalInfo.resumeUrl} variant="secondary" external>
-                View Resume
-              </LinkButton>
-            )}
+            <LinkButton href={t.hero.resumeUrl} variant="secondary" external>
+              {t.hero.viewResume}
+            </LinkButton>
           </div>
         </header>
 
         <div className="space-y-16">
           <section>
             <SectionHeader
-              title="Languages"
-              description="Spoken languages and proficiency levels."
+              title={t.sections.languages}
+              description={t.sections.languagesDesc}
             />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {languages.map((lang, index) => (
@@ -54,8 +57,8 @@ export default function AboutPage() {
 
           <section className="border-t border-zinc-100 pt-16 dark:border-zinc-800">
             <SectionHeader
-              title="Education"
-              description="Academic background and relevant coursework."
+              title={t.sections.education}
+              description={t.sections.educationDesc}
             />
             <div className="space-y-6">
               {education.map((edu, index) => (
@@ -74,7 +77,7 @@ export default function AboutPage() {
                   {edu.coursework && edu.coursework.length > 0 && (
                     <div className="mt-3">
                       <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                        Relevant Coursework:
+                        {t.sections.relevantCoursework}
                       </p>
                       <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                         {edu.coursework.join(", ")}
@@ -87,7 +90,7 @@ export default function AboutPage() {
           </section>
 
           <section className="border-t border-zinc-100 pt-16 dark:border-zinc-800">
-            <SectionHeader title="Connect" />
+            <SectionHeader title={t.sections.connect} />
             <ul className="space-y-3">
               <li>
                 <a

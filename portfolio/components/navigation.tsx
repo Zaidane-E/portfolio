@@ -2,16 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/experience", label: "Experience" },
-  { href: "/about", label: "About" },
-];
+import { useTranslations } from "@/lib/i18n/useTranslatedData";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Navigation() {
   const pathname = usePathname();
+  const t = useTranslations();
+
+  const navItems = [
+    { href: "/", label: t.nav.home },
+    { href: "/projects", label: t.nav.projects },
+    { href: "/experience", label: t.nav.experience },
+    { href: "/about", label: t.nav.about },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-950/80">
@@ -22,29 +25,32 @@ export function Navigation() {
         >
           ZE
         </Link>
-        <ul className="flex items-center gap-1">
-          {navItems.map((item) => {
-            const isActive =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+        <div className="flex items-center gap-4">
+          <ul className="flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
 
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "font-medium text-zinc-900 dark:text-zinc-100"
-                      : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`rounded-md px-3 py-2 text-sm transition-colors ${
+                      isActive
+                        ? "font-medium text-zinc-900 dark:text-zinc-100"
+                        : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <LanguageSwitcher />
+        </div>
       </nav>
     </header>
   );

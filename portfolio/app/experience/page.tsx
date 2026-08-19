@@ -1,42 +1,44 @@
-import { Metadata } from "next";
-import { personalInfo, skills, experience } from "@/lib/data";
-import { Container, Section, SectionHeader, LinkButton } from "@/components/ui";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Experience",
-  description: `Professional experience and technical skills of ${personalInfo.name}, a software engineer focused on building performant and accessible applications.`,
-};
+import { personalInfo } from "@/lib/data";
+import { Container, Section, SectionHeader, LinkButton } from "@/components/ui";
+import {
+  useTranslations,
+  useTranslatedExperience,
+  useTranslatedSkills
+} from "@/lib/i18n/useTranslatedData";
 
 export default function ExperiencePage() {
+  const t = useTranslations();
+  const experience = useTranslatedExperience();
+  const skills = useTranslatedSkills();
   return (
     <Section className="pt-20">
       <Container>
         <header className="mb-16">
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
-            Experience
+            {t.pages.experience.title}
           </h1>
           <div className="mt-6 space-y-4 text-zinc-600 dark:text-zinc-400">
             <p>
-              My professional journey in software engineering, from DevOps and automation to full-stack development.
+              {t.pages.experience.description}
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <LinkButton href={`mailto:${personalInfo.email}`}>
-              Get in Touch
+              {t.sections.getInTouch}
             </LinkButton>
-            {personalInfo.resumeUrl && (
-              <LinkButton href={personalInfo.resumeUrl} variant="secondary" external>
-                View Resume
-              </LinkButton>
-            )}
+            <LinkButton href={t.hero.resumeUrl} variant="secondary" external>
+              {t.hero.viewResume}
+            </LinkButton>
           </div>
         </header>
 
         <div className="space-y-16">
           <section>
             <SectionHeader
-              title="Work Experience"
-              description="Professional roles and contributions."
+              title={t.sections.workExperience}
+              description={t.sections.workExperienceDesc}
             />
             <div className="space-y-10">
               {experience.map((job, index) => (
@@ -82,8 +84,8 @@ export default function ExperiencePage() {
 
           <section className="border-t border-zinc-100 pt-16 dark:border-zinc-800">
             <SectionHeader
-              title="Technical Skills"
-              description="Technologies and practices I work with regularly."
+              title={t.sections.technicalSkills}
+              description={t.sections.technicalSkillsDesc}
             />
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map((skill) => (
@@ -107,7 +109,7 @@ export default function ExperiencePage() {
           </section>
 
           <section className="border-t border-zinc-100 pt-16 dark:border-zinc-800">
-            <SectionHeader title="Connect" />
+            <SectionHeader title={t.sections.connect} />
             <ul className="space-y-3">
               <li>
                 <a

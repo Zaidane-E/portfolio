@@ -1,16 +1,20 @@
+"use client";
+
 import Link from "next/link";
-import { getFeaturedProjects } from "@/lib/data";
 import { Container, Section, SectionHeader, BadgeList, LinkButton } from "@/components/ui";
+import { useTranslations, useTranslatedProjects } from "@/lib/i18n";
 
 export function FeaturedProjects() {
-  const projects = getFeaturedProjects();
+  const t = useTranslations();
+  const allProjects = useTranslatedProjects();
+  const projects = allProjects.filter(p => p.featured);
 
   return (
     <Section>
       <Container>
         <SectionHeader
-          title="Featured Projects"
-          description="Selected work that showcases my technical skills and problem-solving approach."
+          title={t.sections.featuredProjects}
+          description={t.sections.featuredProjectsDesc}
         />
         <div className="space-y-8">
           {projects.map((project) => (
@@ -35,11 +39,11 @@ export function FeaturedProjects() {
               <div className="mt-6 flex flex-wrap gap-3">
                 {project.links?.live && (
                   <LinkButton href={project.links.live} external>
-                    View Live Demo
+                    {t.sections.viewLiveDemo}
                   </LinkButton>
                 )}
                 <LinkButton href={`/projects/${project.slug}`} variant="secondary">
-                  Learn More
+                  {t.sections.learnMore}
                 </LinkButton>
               </div>
             </article>
@@ -50,7 +54,7 @@ export function FeaturedProjects() {
             href="/projects"
             className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           >
-            View all projects &rarr;
+            {t.sections.viewAllProjects} &rarr;
           </Link>
         </div>
       </Container>
